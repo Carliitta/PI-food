@@ -1,0 +1,26 @@
+.contenedorHome{
+   background:  url("../../img/pizza.jpg");
+   background-size: cover;
+   height: auto;
+}
+.grid{
+   margin-top: 10px;
+   display: grid;
+   gap:25px;
+   grid-template-columns: 1fr 1fr 1fr   ; /* 3columnas del mismo tamano  */
+   grid-template-rows: 1fr 1fr 1fr  ;    /* 3filas del mismo tamano  */
+   padding-left: 50px;
+}
+body::-webkit-scrollbar {
+   width: 12px;               /* width of the entire scrollbar */
+ }
+ 
+ body::-webkit-scrollbar-track {
+   background: rgb(1, 6, 8);        /* color of the tracking area */
+ }
+ 
+ body::-webkit-scrollbar-thumb {
+   background-color: var(--color-red);    /* color of the scroll thumb */
+   border-radius: 20px;       /* roundness of the scroll thumb */
+   border: 3px solid var(--color-yellow);  /* creates padding around scroll thumb */
+ }

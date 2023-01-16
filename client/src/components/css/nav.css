@@ -1,0 +1,79 @@
+
+.contenedorNav{
+    padding: 30px;
+    background-color:var(--color-red);
+  
+}
+
+.cajaBuscar{
+    display: flex;
+    position: relative;
+   justify-content: center;
+}
+.contenedorNav input[type=text]{
+    height: 30px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: left;
+    padding-left: 10px;
+    border: none;
+    font-size: 17px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.linkRecipes{
+  text-decoration: none;
+  color: var(--color-yellow);
+  font-weight: bold;
+  margin-left: 20px;
+  -webkit-text-stroke: 1px rgb(10, 10, 1); 
+}
+.divLink{
+  display: flex;
+  justify-content: right;
+ 
+}
+.icon{
+    position: absolute;
+    width: 25px;
+    height: 20px;
+    top: 50%;
+    right: 42%;
+    transform: translateY(-50%);  
+}
+.icon:hover{
+    opacity: 0.3;
+    cursor: pointer;
+  }
+  .icon2{
+    width: 40px;
+  }
+  .linkCreate{
+    text-decoration: none;
+    color:var(--color-yellow);
+    position: relative;
+    font-weight: bold;
+    float: right;
+    -webkit-text-stroke: 1px rgb(10, 10, 1); 
+  }
+  .linkCreate img{
+    width: 45px;
+    position: absolute;
+    top: 89%;
+    right: 25%;
+  }
+  .linkCreate img:hover{
+    -webkit-transform:scale(1.1);transform:scale(1.1);
+  }
+#reload img{
+  width: 30px;
+}
+#reload button{
+  background: none;
+  border: none;
+}
+#reload button:hover{
+  -webkit-transform:scale(1.2);transform:scale(1.2);
+  cursor: pointer;
+}

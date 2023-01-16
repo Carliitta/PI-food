@@ -1,0 +1,24 @@
+.contenedorFiltros
+{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--color-red);
+    padding-bottom: 5px;
+}
+.contenedorFiltros h3{
+    color:var(--color-yellow);
+    margin-right: 10px;
+    
+}
+.contenedorFiltros select{
+    width: 150px;
+    height: 25px;
+    border-radius: 2%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.contenedorFiltros select:hover{
+  filter:opacity(0.8)
+
+}

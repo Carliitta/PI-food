@@ -1,0 +1,63 @@
+.contenedorCard{
+    padding: 5px;
+    grid: block;
+    text-align: center;
+    width: 400px;
+    border: none;
+   margin-bottom: 20px;
+}
+.contenedorCard:hover, .poster:hover, .titulo:hover{
+  
+-webkit-transform:scale(1.01);transform:scale(1.01)
+}
+.card{
+    border: none;
+    height: 430px;
+    padding: 10px;
+    overflow-y: auto;
+    box-shadow: rgba(235, 231, 231, 0.507) 0px 18px 50px -10px;
+    background: url("../../img/ooo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  /*   backdrop-filter: blur(4px); */
+    border-radius: 20px;
+
+}
+#link{
+    text-decoration: none;
+}
+.poster{
+    margin-top: 20px;
+    width: 270px;
+    border-radius: 20px;
+}
+
+.titulo, .parrafoDieta{
+    color: var(--color-yellow);
+    font-weight:800;
+    font-size: 25px;
+    -webkit-text-stroke: 1.5px rgb(3, 1, 10); 
+}
+.card h5{
+    color: rgb(175, 9, 9);
+    margin-top: 10px;
+    font-size: 19px;
+}
+
+.parrafoDieta ul{
+    display: grid;
+    height: 90px;
+    grid-template-columns: 2fr 2fr 2fr 2fr ;
+    grid-template-rows: 1fr 1fr ;
+    list-style:circle
+    
+}
+.parrafoDieta ul li{
+    background: none;
+    color: #fff;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-size: 15px;
+    cursor:default;
+  
+}

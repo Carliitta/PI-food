@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --color-red:#ef1c1c87;
+    --color-yellow:rgb(250, 235, 16);
+}
+body{
+    background: url("../../img/halved-bell-pepper-and-mixed-vegetable-salad-with-cutlery-on-black-concrete-backdrop.jpg");
+    background-size: cover;
+    height: auto;
+}
+.contenedor{
+ padding-top: 50px;
+ display: block;
+ text-align: center;
+ font-family: 'Indie Flower', cursive;
+
+}
+
+.tituloFood{
+   font-size: 80px;
+   color:#eb402d;
+   -webkit-text-stroke: 2px rgb(215, 215, 13); 
+   animation: hello-goodbye 1.8s ;
+}
+@keyframes hello-goodbye {
+    0% {
+      transform: translateY(-60px) rotateX(0.7turn);
+      opacity: 0;
+    }
+   
+  }
+       
+
+.nombre{
+    font-size: 50px;
+    color:rgb(215, 215, 13);
+    -webkit-text-stroke: 1px #eb402d;
+    animation: hello-goodbye 2s ;
+}
+.btnInicio{
+    width: 200px;
+    height: 45px;
+    cursor: pointer;
+    margin-top: 100px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-family: 'Indie Flower', cursive;
+    border-radius: 5px;
+    background-color: #eb402d;
+    border: solid 2px rgb(215, 215, 13);
+    color: #fff;
+    transition: width height 0.3s linear;
+    animation: hello-goodbye 1.8s ;
+}
+.btnInicio:hover{
+    background-color: rgb(215, 215, 13);
+    border: solid 2px #eb402d;
+    color:#eb402d;
+    font-size: 23px;
+    width: 205px;
+    height: 50px;
+}

@@ -1,0 +1,92 @@
+.contenedorCrear{
+    display: block;
+    justify-content: flex-end;
+    padding-right: 30px;
+    align-items: center;
+    background: url("../../img//halved-bell-pepper-and-mixed-vegetable-salad-with-cutlery-on-black-concrete-backdrop.jpg");
+    background-size: cover;
+    min-height: 789px;
+ 
+}
+.formulario{
+  width: 450px;
+  display: block;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  text-align: center;
+  align-items: center;   
+  box-shadow: rgba(241, 239, 239, 0.459) 0px 10px 20px, rgba(165, 26, 26, 0.23) 0px 6px 6px; 
+  margin-top: 10px;
+
+  height:680px;
+ margin-left: 60%;
+
+}
+
+
+.formulario input, select{
+padding-left: 5px;
+width: 380px;
+height: 30px;
+
+margin-bottom: 8px;
+border-radius: 5px;
+border: none;
+font-size: 17px;
+}
+.logo{
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 5px;
+   margin-bottom: 10px;
+}
+.btnSubmit{
+    width: 150px;
+    height: 35px;
+    margin-top: 40px;
+    font-size: 18px;
+    background-color: var(--color-yellow);
+}
+.btnSubmit:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.formulario textarea{
+    width: 380px;
+    height: 60px;
+    padding-left: 5px;
+    border-radius: 5px;
+    font-size: 17px;
+    margin-bottom: 5px;
+    resize: none;  /* para que no se pueda estirar */
+    font-family: inherit;  /* para que tenga la misma fuente que en los inputs */
+}
+.btnDelete{
+    width: 20px !important ; 
+    height: 25px  !important;
+    border: none;
+    background-color: rgb(228, 73, 73);
+    color: #fff;
+}
+.contenedorSelec{
+    width: 400px;
+    overflow-y: scroll;
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 30px;
+
+}
+.p{
+    color :#fff;
+    font-size: 14px;
+}
+#linkVolver2{
+    width: 50px;
+    margin-left: 55%;
+
+}
+#linkVolver2 img{
+    width: 50px;
+}
