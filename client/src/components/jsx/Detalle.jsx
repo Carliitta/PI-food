@@ -18,12 +18,18 @@ export const Detalle = () => {
      return ()=>{
       dispatch(clearDetail())
      }
-    },[id])
+    },[])
 
-
+    if(detalle.length===0)
+    return(
+      <div >
+        <Spinner/>
+      </div>
+    )
   return (
-
+    
     <div className='contenedorDetalle'>
+    
         <Link id="linkVolver" to={"/home"}>
         <img src={flecha} alt="volver" />
         </Link>
