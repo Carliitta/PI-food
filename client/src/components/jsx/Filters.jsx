@@ -70,6 +70,7 @@ export const Filters = ({setPagina}) => {
             </select>
             <select  name="" id="" onChange={orderApiDb}>
                 <option hidden>Api-Db</option>
+                <option value="all">All</option>
                 <option value="API">Api</option>
                 <option value="DB">DataBase</option>
             </select>

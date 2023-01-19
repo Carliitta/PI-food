@@ -132,17 +132,27 @@ export default function rootReducer(state = initialState, action) {
           if(action.payload==="DB"){
              var data= recetas.filter(r=> r.id.length>7)
              if(data.length){
-              return resultado
+              resultado=data
+              
              }else{
-              alert("No se encontraron recetas en la base de datos")
+              alert("No recipes found in the database")
               return state
              }
             
           }else
           if(action.payload==="API"){
+            var dataApi=recetas.filter(r=> r.id.length<7)
+            if(dataApi.length){
+              resultado=dataApi
+              
+             }else{
+              alert("Recipes not available at the moment")
+              return state
+             }
             
-            resultado= recetas.filter(r=> r.id.length<7)
-          
+          }
+          else{
+              resultado= state.recipes
           }
             return{
               ... state,

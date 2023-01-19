@@ -16,7 +16,7 @@ async function getRecipesApi() {
  
       const dataApi= recetas.data.results.map(r=>{ 
         return {
-           id: r.id,
+           id: String(r.id),
            nombre: r.title,
            descripcion:r.summary.replace(/[^a-zA-Z 0-9.]+/g,' '),
            imagen:r.image,

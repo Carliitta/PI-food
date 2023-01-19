@@ -18,7 +18,7 @@ export const TYPES={
  export function getAllRecipes(){
     return async function(dispatch){
       try {
-          var json = await axios.get('http://localhost:3001/recipes')
+          var json = await axios.get('/recipes')
           const array=[]
           array.push(json.data)
         
@@ -35,7 +35,7 @@ export const TYPES={
  export function searchRecipe(name){
     return async function(dispatch){
       try {
-          var json = await axios.get(`http://localhost:3001/recipes?name=${name}`)
+          var json = await axios.get(`/recipes?name=${name}`)
           if(typeof json.data === 'object'){ //pregunto si lo que viene es un ojeto? sino mando el error 
               return dispatch({
                  type: TYPES.SEARCH_RECIPE,
@@ -53,7 +53,7 @@ export const TYPES={
  export function getDiets(){
   return async function(dispatch){
     try {
-        var json = await axios.get(`http://localhost:3001/diets`)
+        var json = await axios.get(`/diets`)
        
             return dispatch({
                type: TYPES.GET_DIETS,
@@ -68,7 +68,7 @@ export const TYPES={
 export function getDetalle(id){
   return async function(dispatch){
     try {
-      var json =  await axios.get(`http://localhost:3001/recipes/${id}`)
+      var json =  await axios.get(`/recipes/${id}`)
             return dispatch({
                type: TYPES.GET_DETALLE,
                payload: json.data[0]
@@ -83,7 +83,7 @@ export function getDetalle(id){
 export function deleteRecipe(id){
   return async function(dispatch){
     try {
-         await axios.delete(`http://localhost:3001/recipes/${id}`)
+         await axios.delete(`/recipes/${id}`)
           
             return dispatch({
                type: TYPES.DELETE_RECIPE,
@@ -98,7 +98,7 @@ export function deleteRecipe(id){
 export function createRecipe(posts){
   return async function(dispatch){
     try {
-      await axios.post(`http://localhost:3001/recipes`,posts)
+      await axios.post(`/recipes`,posts)
         return dispatch({
             type: TYPES.POST_RECIPE
             
@@ -112,7 +112,7 @@ export function createRecipe(posts){
 export function getMyRecipes(){
   return async function(dispatch){
     try {
-      const json= await axios.get(`http://localhost:3001/db`)
+      const json= await axios.get(`/db`)
         return dispatch({
             type: TYPES.RECIPES_DB,
             payload:json.data
