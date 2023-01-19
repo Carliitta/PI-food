@@ -3,23 +3,27 @@ import "../css/detalle.css"
 import React, { useState , useEffect } from 'react';
 import {useParams,Link} from "react-router-dom"
 import {useDispatch, useSelector} from "react-redux"
-import { getDetalle } from "../Redux/actions";
+import { getDetalle,clearDetail } from "../Redux/actions";
 import flecha from "../../img/volver.png"
+import {Spinner} from "../jsx/Spinner"
 export const Detalle = () => {
     const detalle = useSelector(state=>state.detalle)
+  
     let {id}= useParams()
   
     let dispatch= useDispatch()
     
     useEffect(() => {
-   dispatch(getDetalle(id)) 
-    
-   
+      dispatch(getDetalle(id));
+     return ()=>{
+      dispatch(clearDetail())
+     }
     },[id])
 
+
   return (
+
     <div className='contenedorDetalle'>
-      {/*  {console.log(detalle)} */}
         <Link id="linkVolver" to={"/home"}>
         <img src={flecha} alt="volver" />
         </Link>
@@ -35,7 +39,7 @@ export const Detalle = () => {
               detalle.diets?.map((d,i)=>{
                   return(
                     <li id="li" key={i}>
-                      {d.nombre?d.nombre: d} {/* local= d.nombre */}
+                      {d.nombre?d.nombre: d} 
                     </li>
                   )
               }) 
@@ -50,8 +54,8 @@ export const Detalle = () => {
         <p>{detalle.pasos}</p>
        </div>
        </div>
-      
        
     </div>
+   
   )
 }

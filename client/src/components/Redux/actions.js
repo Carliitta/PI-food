@@ -9,7 +9,9 @@ export const TYPES={
    GET_DETALLE:" GET_DETALLE",
    POST_RECIPE:"POST_RECIPE",
    DELETE_RECIPE:"DELETE_RECIPE",
-   RECIPES_DB:"RECIPES_DB"
+   RECIPES_DB:"RECIPES_DB",
+   ORDEN_DB_API:" ORDEN_DB_API",
+   CLEAR_DETAIL:"CLEAR_DETAIL"
 
 }
 
@@ -140,3 +142,17 @@ export  function orderBySalud(order) { //recive una forma de ordenar
    payload:order
   }
 };
+
+export function orderByDborApi(order){
+  return{
+    type:TYPES.ORDEN_DB_API,
+    payload:order
+  }
+}
+
+export function clearDetail(){
+  return{
+    type:TYPES.CLEAR_DETAIL,
+   
+  }
+}

@@ -5,12 +5,12 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('recipe', {
     id: {
-    /*   type:DataTypes.UUID,
+       type:DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
-      primaryKey: true, */
-      type: DataTypes.INTEGER,
+      primaryKey: true, 
+     /*  type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true */
     },
     nombre: {
       type: DataTypes.STRING,

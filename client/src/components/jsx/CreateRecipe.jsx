@@ -31,6 +31,7 @@ export const CreateRecipe = () => {
         let recipeExists = recipes.filter(e => e.nombre.toLowerCase() === input.nombre.toLowerCase());
         if(recipeExists.length > 0 ) errors.nombre ="The title already exists";
     }
+    //trim elimina los espacios en blanco
      if(!input.nombre.trim()){
       errors.nombre= "Title is required";
     }
@@ -58,21 +59,21 @@ export const CreateRecipe = () => {
     useEffect(() => {
      dispatch(getDiets())
    
-    }, [input])
+    }, [])
     
 
-  function handleDelete(i) {
+  function handleDelete(id) {
     setInput({
       ...input,
-     diet: input.diet.filter((el) => el !== i),
+     diet: input.diet.filter((el) => el !== id)
     });
   }
   function handleSelect(e) {
-   
+   //vemos que no se ingrese la misma receta 2 veces
     if(!input.diet.includes(e.target.value)){
       setInput({
           ...input,
-          diet: input.diet.concat(e.target.value)//almacena lo seleccionado
+          diet: input.diet.concat(e.target.value)//almacena los seleccionado
       })} else {
           alert('You cant add the same diet twice')
       }
@@ -93,13 +94,13 @@ export const CreateRecipe = () => {
    
  }
 
- const handleBlur=(e)=>{
-  handleChangue(e)
+ const handleBlur=()=>{
+
   setErrors(validateInput(input))
  }
 const handleOnSubmit=(e)=>{
  e.preventDefault()
-
+//verifica si las propiedades de el obj tiene length 
   if(Object.keys(errors).length){
     alert("You must complete all fields!")
   }else{
@@ -124,15 +125,15 @@ const handleOnSubmit=(e)=>{
        
              <img className='logo' src={logo} alt="logo" />
             <input required type="text" name='nombre' value={input.nombre} onChange={handleChangue} onBlur={handleBlur}  placeholder='Title...'/>
-            {errors.nombre && <p style={{color:"red"}}>{errors.nombre}</p>}
+            {errors.nombre && <p style={{color:"red" , fontWeight:"bold"}}>{errors.nombre}</p>}
             <input required type="text" name='imagen' value={input.imagen} onChange={handleChangue} placeholder='image URL...'/>
-            {errors.imagen && <p style={{color:"red"}}>{errors.imagen}</p>}
+            {errors.imagen && <p style={{color:"red" , fontWeight:"bold"}}>{errors.imagen}</p>}
             <input required type="number"  name='nivel' value={input.nivel} onChange={handleChangue} onBlur={handleBlur}   placeholder='Health score...'/>
-            {errors.nivel && <p style={{color:"red"}}>{errors.nivel}</p>}
+            {errors.nivel && <p style={{color:"red", fontWeight:"bold" }}>{errors.nivel}</p>}
             <textarea required type="text" name='descripcion' value={input.descripcion} onChange={handleChangue} onBlur={handleBlur} placeholder='Description...'></textarea>
-            {errors.descripcion && <p style={{color:"red"}}>{errors.descripcion}</p>}
+            {errors.descripcion && <p style={{color:"red", fontWeight:"bold"}}>{errors.descripcion}</p>}
             <textarea required type="text" name='pasos' value={input.pasos} onChange={handleChangue} onBlur={handleBlur} placeholder='Instructions...' ></textarea><br></br>
-            {errors.pasos && <p style={{color:"red"}}>{errors.pasos}</p>}
+            {errors.pasos && <p style={{color:"red", fontWeight:"bold"}}>{errors.pasos}</p>}
             <select required  onChange={(e) => handleSelect(e)}  >
               <option hidden>seleccionar dieta</option>
               
@@ -144,7 +145,7 @@ const handleOnSubmit=(e)=>{
                 })
             }
             </select>
-           {errors.diet && <p style={{color:"red"}}>{errors.diet}</p>} 
+        {/*    {errors.diet && <p style={{color:"red"}}>{errors.diet}</p>}  */}
                 <div className='contenedorSelec' >
                     {input.diet?.map((d,i) => (
                         <div  key={i}>

@@ -10,7 +10,7 @@ const datos = require("../jsonComidas.json")
 async function getRecipesApi() {
 
      //*traer datos de la API
-/*     const recetas = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`,{
+  /*  const recetas = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`,{
         headers: { "Accept-Encoding": "gzip,deflate,compress" } 
     })
  
@@ -26,12 +26,12 @@ async function getRecipesApi() {
         
        } 
       }) 
-      return dataApi  */   
+      return dataApi  */ 
         //*traer datos de la API   /*<--- local */
- const dataApi=await datos.map(e=>{     
+  const dataApi=await datos.map(e=>{     
                
             return{
-                id:e.ID,
+                id: String(e.ID),
                 nombre:e.name,
                 descripcion:e.descripcion,
                 imagen:e.imagen,
@@ -41,7 +41,7 @@ async function getRecipesApi() {
             }
         }  
         )      
-        return dataApi  
+        return dataApi   
    
 };
 
@@ -67,23 +67,23 @@ const getDBRecipes = async () => {
     return dbRecipesIds;
   };
    const  getDiets =async () => {
-  try {
- /*    const dietApi = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`,{
+    try {
+  /*  const dietApi = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&addRecipeInformation=true&number=100`,{
         headers: { "Accept-Encoding": "gzip,deflate,compress" } 
     }) */ 
         const dietApi= datos                                         /*<--- local */
           //hacemos un map para taernos las dietas. flat para que solo quede un array
-      const dataDiets=dietApi.map(d=>d.dietas)           /*<--- local */
+     const dataDiets=dietApi.map(d=>d.dietas)           /*<--- local */
    
-    //  const dataDiets=dietApi.data.results.map(e=>e.diets)            /*<--- api */
+      // const dataDiets=dietApi.data.results.map(e=>e.diets)            /*<--- api */
         //y el new set nos permite elimiar los elemnetos repetidos
         const filterDiets= new Set([...dataDiets.flat()])
         const filterDiets2= [...filterDiets,"vegetarian"]
         filterDiets2.forEach(e=>{
             Diet.findOrCreate({
                 where:{
-                   // nombre:e
-                   nombre: e.nombre  || "vegetarian" /*  <--- local */
+                  //nombre:e
+                   nombre: e.nombre || ""  /*  <--- local */
                 }
             })
         })

@@ -124,7 +124,38 @@ export default function rootReducer(state = initialState, action) {
           }
 
         }
+      
+        case TYPES.ORDEN_DB_API:
+          const recetas= state.recipes
+         // const resultado= action.payload==="DB"? recetas.filter(r=> r.id.length>7):recetas.filter(r=>r.id.length<7)
+         var resultado;
+          if(action.payload==="DB"){
+             var data= recetas.filter(r=> r.id.length>7)
+             if(data.length){
+              return resultado
+             }else{
+              alert("No se encontraron recetas en la base de datos")
+              return state
+             }
+            
+          }else
+          if(action.payload==="API"){
+            
+            resultado= recetas.filter(r=> r.id.length<7)
           
+          }
+            return{
+              ... state,
+              allRecipes:  resultado
+              }
+            
+        case TYPES.CLEAR_DETAIL:
+          return{
+            ...state,
+            detalle:[]
+          }
+          
+            
     default:
         return state;
    }

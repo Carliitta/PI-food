@@ -1,6 +1,6 @@
 import {React, useEffect} from 'react'
 import { useDispatch, useSelector} from 'react-redux';
-import { orderByAlf, orderBySalud ,getDiets, orderByDiets} from '../Redux/actions';
+import { orderByAlf, orderBySalud ,getDiets, orderByDiets,orderByDborApi} from '../Redux/actions';
 import { useHistory } from 'react-router-dom';
 
 import "../css/filtros.css"
@@ -31,6 +31,13 @@ export const Filters = ({setPagina}) => {
       
        
       }
+      function orderApiDb (e){
+        dispatch(orderByDborApi(e.target.value))
+        history.push("/home")
+        setPagina(1)
+      
+       
+      }
      
    
   return (
@@ -42,6 +49,7 @@ export const Filters = ({setPagina}) => {
                 <option value="ASCENDENTE">A-Z</option>
                 <option value="DESCENDENTE">Z-A</option>
             </select>
+            
             <select name="" id="" onChange={orderNivel}>
                 <option hidden>Health score</option>
                 <option value="all">All</option>
@@ -59,6 +67,11 @@ export const Filters = ({setPagina}) => {
                    
                 }
                
+            </select>
+            <select  name="" id="" onChange={orderApiDb}>
+                <option hidden>Api-Db</option>
+                <option value="API">Api</option>
+                <option value="DB">DataBase</option>
             </select>
          </div>
 
