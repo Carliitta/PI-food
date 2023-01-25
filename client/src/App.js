@@ -5,8 +5,8 @@ import  Home from './components/jsx/Home';
 import { Detalle } from './components/jsx/Detalle';
 import { CreateRecipe } from './components/jsx/CreateRecipe';
 import { Recipes } from './components/jsx/Recipes';
-import axios from 'axios';
-axios.defaults.baseURL="http://localhost:3001/"
+
+
 function App() {
   return (
    <BrowserRouter>
