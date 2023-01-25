@@ -130,7 +130,7 @@ export default function rootReducer(state = initialState, action) {
          // const resultado= action.payload==="DB"? recetas.filter(r=> r.id.length>7):recetas.filter(r=>r.id.length<7)
          var resultado;
           if(action.payload==="DB"){
-             var data= recetas.filter(r=> r.id.length>7)
+             var data= recetas.filter(r=> r.id.length>10)
              if(data.length){
               resultado=data
               
@@ -141,7 +141,7 @@ export default function rootReducer(state = initialState, action) {
             
           }else
           if(action.payload==="API"){
-            var dataApi=recetas.filter(r=> r.id.length<7)
+            var dataApi=recetas.filter(r=> r.id.length<10)
             if(dataApi.length){
               resultado=dataApi
               
